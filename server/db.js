@@ -1,9 +1,7 @@
 const mongoose = require('mongoose');
 
-const DBPATH = 'mongodb://localhost:27017/curato';
-
 async function main () {
-  await mongoose.connect(DBPATH);
+  await mongoose.connect(process.env.DBPATH);
 }
 
 main().catch(err => console.log(err));
